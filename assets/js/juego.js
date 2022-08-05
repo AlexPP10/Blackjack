@@ -9,8 +9,9 @@
 let deck= [];
 
 const cartas=['C','D','H','S'];
-
 const figuras=['A','J','Q','K'];
+
+const btnPedir=document.querySelector('#btnPedir');
 
 const crearDeck = () => {
     for (let i=2; i<=10; i++){
@@ -45,6 +46,50 @@ const pedirCarta=() =>{
     }
     return deck.pop();
 }
-pedirCarta();
+// let carta = pedirCarta();
+// console.log({carta});
 
 console.log('documeto',deck);
+
+const valorCarta = (carta) => {
+
+    const valor=carta.substring(0, carta.length-1);
+    let puntos=0;
+
+/*     if(carta.length===2){
+        
+        if(carta[0]==='A'){
+            valor=11;
+        }else if(['J','Q','K'].includes(carta[0])){
+            valor=10;
+        }else{
+            valor=carta[0];
+        }
+    }else if(carta.length===3){
+        valor=(carta[0]+carta[1]);
+    } */
+
+    if(isNaN(valor)){
+        puntos=(valor==='A') ? 11:10;
+    }else{
+        puntos=valor*1;
+    }
+
+
+    console.log('valorCarta', carta, puntos);
+    return puntos;
+
+    
+}
+
+// valorCarta(carta);
+
+// Eventos
+
+btnPedir.addEventListener('click', () => {
+    let carta = pedirCarta();
+    // console.log(carta);
+    
+    
+})
+
