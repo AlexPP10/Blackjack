@@ -22,3 +22,11 @@ html, body{
 #computadora-cartas, #jugador-cartas{
     height: 240px;
 }
+
+#marcador{
+    text-align: center;
+    padding: 20px;
+    font-size: 25px;
+    color: yellowgreen;
+    height: 100px;
+}
